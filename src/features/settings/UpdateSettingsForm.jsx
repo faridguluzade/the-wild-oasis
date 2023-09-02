@@ -20,9 +20,9 @@ function UpdateSettingsForm() {
   const { updateSetting, isUpdating } = useUpdateSetting();
 
   function handleUpdate(e) {
-    const { name, value } = e.target;
+    const { name, value, defaultValue } = e.target;
 
-    if (!value) return;
+    if (!value || value === defaultValue) return;
 
     updateSetting({ [name]: value });
   }
