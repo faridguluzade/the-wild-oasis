@@ -10,7 +10,7 @@ function Cabins() {
   const [showForm, setShowForm] = useState(false);
 
   return (
-    <>
+    <Row>
       <Row type="horizontal">
         <Heading as="h1">All cabins</Heading>
         <p>Filter / Sort</p>
@@ -25,7 +25,7 @@ function Cabins() {
 
         {showForm && <CreateCabinForm />}
       </Row>
-    </>
+    </Row>
   );
 }
 
