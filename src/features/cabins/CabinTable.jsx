@@ -11,6 +11,8 @@ function CabinTable() {
   const { cabins, isLoading } = useCabins();
   const [searchParams] = useSearchParams();
 
+  if (isLoading) return <Spinner />;
+
   if (!cabins?.length) return <Empty resourceName="cabins" />;
 
   // 1. FILTER
@@ -30,8 +32,6 @@ function CabinTable() {
   const sortedCabins = filteredCabins?.sort(
     (a, b) => (a[field] - b[field]) * modifier
   );
-
-  if (isLoading) return <Spinner />;
 
   return (
     <Menus>
